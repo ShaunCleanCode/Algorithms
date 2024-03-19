@@ -20,19 +20,24 @@ def count_one_and_two(n,k):
     return count
 
 def main():
-    # 시작 시간 측정
-    start_time = time.time()
-    result =count_one_and_two(1000000,2)
-    print(result)
-    # 종료 시간 측정
-    end_time = time.time()
-
-    # 수행 시간 출력
-    print(f"수행 시간: {end_time - start_time}초")
-
-
+   
     
+    #N,K 를 공백 기준으로 구분해서 입력받기
+    n,k = map(int(input.split()))
+    
+    result =count_one_and_two(n,k)
+    print(result)
+    
+
+
+# 시작 시간 측정
+start_time = time.time()
 main()
+# 종료 시간 측정
+end_time = time.time()
+
+# 수행 시간 출력
+print(f"수행 시간: {end_time - start_time}초")
 
 
 

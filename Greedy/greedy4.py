@@ -46,8 +46,7 @@ n= int(input())
 array = list(input().split())
 
 for a in array:
-    x,y=operate(a,1,1,n) 
-    print(f"X={x},Y={y}")
+    x,y=operate(a,x,y,n) 
 
 print(f"X={x},Y={y}")
     
