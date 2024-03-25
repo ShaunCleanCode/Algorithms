@@ -13,8 +13,10 @@ graph = [
 
 
 def dfs(graph,v,visited):
+    # visited current Node
     visited[v]=True
     print(f"Visited :{v}",end=" ")
+    # recursive visited node that connected current node
     for i in graph[v]:
         if visited[i]==False:
             dfs(graph,i,visited)
