@@ -1,7 +1,7 @@
 import heapq
 
 INF=int(1e9)
-# 도시의 개수 N , 통로의 개수 M
+# 도시의 개수 N , 통로의 개수 M , 시작 노드 start
 n,m,start=map(int,input().split())
 
 # 그래프 초기화
@@ -19,7 +19,6 @@ def dijkstra(start):
     distance[start]=0
     while q:
         dist,now =heapq.heappop(q)
-        # 이 아래 부분 추가 설명좀 해줄래?
         if distance[now] <dist:
             continue
         for i in graph[now]:
@@ -43,4 +42,6 @@ for i in range(1,n+1):
 print(str(max_distance)+" "+str(count-1))
            
 
+
+## 특정노드에서 다른 노드들까지 간다면? 다익스트라 알고리즘 
     
