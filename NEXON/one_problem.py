@@ -10,6 +10,7 @@ def getMinTime(cache_size, cache_time, server_time, urls):
         # URL이 캐시에 있다면, 캐시 시간을 추가합니다.
         if url in cache:
             times.append(cache_time)
+            # UPDATE
         else:
             # 캐시에 없다면, 서버 시간을 추가하고 URL을 캐시에 추가합니다.
             times.append(server_time)

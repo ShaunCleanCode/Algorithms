@@ -15,18 +15,19 @@ import sys
 #  2. INTEGER m
 #
 
+
+
 def legoBlocks(n, m):
     
     MOD= (10**9)+7
-    array_sm =[0] *1002
+    array_sm =[0] *1001
     array_sm[0]=0
     array_sm[1]=1
     array_sm[2]=2
     array_sm[3]=4
     array_sm[4]=8
-    if m>=5:
-        for i in range(5, m+1):
-            array_sm[i] = (array_sm[i-1] + array_sm[i-2] + array_sm[i-3] + array_sm[i-4]) % MOD
+    for i in range(5, m+1):
+        array_sm[i] = (array_sm[i-1] + array_sm[i-2] + array_sm[i-3] + array_sm[i-4]) % MOD
 
     
     # Calculate total configurations for all rows
@@ -47,8 +48,10 @@ def legoBlocks(n, m):
     return solid_case[m]
 
     
-if __name__ == '__main__':
+    
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     t = int(input().strip())
 
@@ -61,6 +64,10 @@ if __name__ == '__main__':
 
         result = legoBlocks(n, m)
 
-        print((str(result) + '\n'))
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
 
 
+    
+    

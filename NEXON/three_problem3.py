@@ -5,17 +5,17 @@ def countMeetings(firstDay, lastDay):
 
     # Keep track of scheduled meeting days to avoid double-booking
     scheduled_days = set()
-    meetings_count = 0
+    total = 0
 
     for start, end in investors:
         # Try to schedule a meeting within the investor's available range
         for day in range(start, end + 1):
             if day not in scheduled_days:
                 scheduled_days.add(day)
-                meetings_count += 1
+                total += 1
                 break
 
-    return meetings_count
+    return total
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
